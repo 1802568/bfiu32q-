@@ -4,7 +4,7 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-
+var rect, bott, right
 function preload()
 {
 	helicopterIMG=loadImage("helicopter.png")
@@ -39,6 +39,8 @@ function setup() {
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
  	World.add(world, ground);
 
+	rect = Bodies.rectangle(width/2, 645, width, 10 , {isStatic:true} );
+ 	World.add(world,rect);
 
 	Engine.run(engine);
   
@@ -62,8 +64,8 @@ packageBody.velocityX=0.5
 
     
   }
-  if(packageSprite.isTouching(ground)){
-	packageSprite.velocityX=1;
+  if(packageBody.isTouching(ground)){
+	packageBody.velocityX=1;
 	}
 }
 
