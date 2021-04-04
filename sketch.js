@@ -63,7 +63,7 @@ packageBody.velocityX=0.5
     
   }
   if(packageSprite.isTouching(ground)){
-	packageSprite.velocityX=13;
+	packageSprite.velocityX=1;
 	}
 }
 
